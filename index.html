@@ -31,7 +31,7 @@
     scene.add(light);
 
     const loader = new GLTFLoader();
-    loader.load('test.glb', (gltf) => {
+    loader.load('https://thebimmer231.github.io/TheBimmer231/test.glb', (gltf) => {
       scene.add(gltf.scene);
     }, undefined, (error) => {
       console.error('Failed to load GLB:', error);
