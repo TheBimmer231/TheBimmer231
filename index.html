@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Three.js GLB Loader</title>
   <style>
     body { margin: 0; }
@@ -10,8 +10,8 @@
 </head>
 <body>
   <script type="module">
-    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
-    import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+    import * as THREE from '/three_js/three.module.min.js';
+    import { GLTFLoader } from '/three_js/GLTFLoader.js';
     import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
     const scene = new THREE.Scene();
@@ -28,13 +28,14 @@
     controls.enableDamping = true;
 
     const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    light.position.set(0, 1, 0);
     scene.add(light);
 
     const loader = new GLTFLoader();
-    loader.load('https://thebimmer231.github.io/TheBimmer231/test.glb', (gltf) => {
+    loader.load('/test.glb', function (gltf) {
       scene.add(gltf.scene);
-    }, undefined, (error) => {
-      console.error('Failed to load GLB:', error);
+    }, undefined, function (error) {
+      console.error('An error occurred while loading the GLB model:', error);
     });
 
     function animate() {
