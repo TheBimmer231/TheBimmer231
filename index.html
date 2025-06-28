@@ -10,9 +10,9 @@
 </head>
 <body>
   <script type="module">
-    import * as THREE from '/three_js/three.module.min.js';
-    import { GLTFLoader } from '/three_js/GLTFLoader.js';
-    import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+    import * as THREE from '/TheBimmer231/three_js/three.module.min.js';
+    import { GLTFLoader } from '/TheBimmer231/three_js/GLTFLoader.js';
+    import { OrbitControls } from '/TheBimmer231/three_js/OrbitControls.js';
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xdddddd);
@@ -32,7 +32,7 @@
     scene.add(light);
 
     const loader = new GLTFLoader();
-    loader.load('/test.glb', function (gltf) {
+    loader.load('/TheBimmer231/test.glb', function (gltf) {
       scene.add(gltf.scene);
     }, undefined, function (error) {
       console.error('An error occurred while loading the GLB model:', error);
