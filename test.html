@@ -27,12 +27,12 @@
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.minDistance = 10;
-    controls.maxDistance = 30;
+    controls.minDistance = 20;
+    controls.maxDistance = 50;
     controls.enablePan = false;
 
     const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-    light.position.set(0, 1, 0);
+    light.position.set(0, 5, 0);
     scene.add(light);
 
     const loader = new GLTFLoader();
