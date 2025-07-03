@@ -28,7 +28,7 @@
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.minDistance = 10;
-    controls.maxDistance = 20;
+    controls.maxDistance = 30;
     controls.enablePan = false;
 
     const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
@@ -36,7 +36,7 @@
     scene.add(light);
 
     const loader = new GLTFLoader();
-    loader.load('/TheBimmer231/test.glb', function (gltf) {
+    loader.load('/TheBimmer231/Boat.glb', function (gltf) {
       scene.add(gltf.scene);
     }, undefined, function (error) {
       console.error('An error occurred while loading the GLB model:', error);
